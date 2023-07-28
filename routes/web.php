@@ -27,7 +27,7 @@ Route::post('logout', function () {
     request()->session()->invalidate();
     request()->session()->regenerateToken();
     return redirect('login');
-});
+})->name('logout');
 
 Route::middleware('auth')->group(function () {
 
@@ -42,5 +42,5 @@ Route::middleware('auth')->group(function () {
         $deudores=DB::select('select usuario.id, usuario.nombre, sum(monto) as total_monto from usuario join pago on usuario.id=pago.id_usuario where usuario.tipo <>\'administrador\' and pago.estado =\'no realizado\' group by usuario.id, usuario.nombre order by total_monto desc ');
         return view('deudores.index',['deudores' => $deudores]);
     })->name('deudores.index');
-    
+
 });

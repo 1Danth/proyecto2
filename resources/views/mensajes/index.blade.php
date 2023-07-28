@@ -3,7 +3,7 @@
 @section('titleh3',' Mensajes Recibidos')
 @section('btn_create_title')
 <div class="col d-flex justify-content-center align-items-center">
-    <button type="button" class="btn btn-primary">Enviar Mensaje</button>
+    <a href="{{ route('mensajes.create') }}" class="btn btn-primary">Enviar Mensaje</a>
 </div>
 @endsection
 @section('table_headers')

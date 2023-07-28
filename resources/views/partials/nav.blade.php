@@ -44,7 +44,7 @@
             @endauth
             @guest
             <li class="nav-item">
-                <a class="nav-link" href="/login">Login</a>
+                <a class="nav-link" href="{{ route('login') }}">Login</a>
             </li>
             @endguest
         </ul>
@@ -53,7 +53,7 @@
             {{auth()->user()->nombre }}
           </span>
           <div class="nav-item">
-            <form action="/logout" method="POST">
+            <form action="{{ route('login') }}" method="POST">
              @csrf
              <a class="nav-link" href="#" onclick="this.closest('form').submit()">Logout</a>
             </form>

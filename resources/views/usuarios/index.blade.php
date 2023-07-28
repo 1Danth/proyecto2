@@ -3,7 +3,7 @@
 @section('titleh3','Usuarios')
 @section('btn_create_title')
 <div class="col d-flex justify-content-center align-items-center">
-    <button type="button" class="btn btn-primary">Crear Usuario</button>
+    <a href="{{ route('usuarios.create') }}" class="btn btn-primary">Registrar Usuario</a>
 </div>
 @endsection
 @section('table_headers')

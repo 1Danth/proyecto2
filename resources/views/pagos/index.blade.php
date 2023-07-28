@@ -4,7 +4,7 @@
         @section('titleh3','Cobros')
         @section('btn_create_title')
         <div class="col d-flex justify-content-center align-items-center">
-            <button type="button" class="btn btn-primary">Registrar Cobro</button>
+            <a href="{{ route('pagos.create') }}" class="btn btn-primary">Registrar Cobro</a>
         </div>
         @endsection
 
@@ -46,7 +46,9 @@
 @if (auth()->user()->tipo==='residente'||auth()->user()->tipo==='subarrendado')
         @section('title','Mis Pagos')
         @section('titleh3','Mis Pagos')
-        @section('btn_create_title','Registrar Pago')
+        @section('btn_create_title')
+       
+        @endsection
 
         @section('table_headers')
         <th scope="col">ID</th>
