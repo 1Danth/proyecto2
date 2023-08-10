@@ -4,5 +4,5 @@
 
 @section('content')
     @include('partials.nav')
-    <h1>HOME</h1>
+    <h1>BIENVENIDO AL PROTAL DE CONDOMINIO UNIVERSITARIO</h1>
 @endsection

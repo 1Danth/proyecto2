@@ -29,7 +29,7 @@
                 <td>
                     <div class="row">
                         <div class="col"> 
-                            <a href="#" class="btn btn-info m-2">Cambiar Estado</a>
+                            <a href="{{ route('pagos.edit',['pago'=>$pago->id]) }}" class="btn btn-info m-2">Cambiar Estado</a>
                         </div>
                     </div>
                 </td>
@@ -56,7 +56,6 @@
         <th scope="col">Monto</th>
         <th scope="col">Estado</th>
         <th scope="col">Servicio</th>
-        <th scope="col">Acciones</th>
         @endsection
 
         @section('forelse_data')
@@ -67,13 +66,6 @@
                 <td>{{ $pago->monto }}</td>
                 <td>{{ $pago->estado }}</td>
                 <td>{{ $pago->servicio }}</td>
-                <td>
-                    <div class="row">
-                        <div class="col"> 
-                            <a href="#" class="btn btn-info m-2">Cambiar Estado</a>
-                        </div>
-                    </div>
-                </td>
             </tr>
             @empty
             <tr>

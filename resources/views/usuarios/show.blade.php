@@ -5,7 +5,7 @@
 @section('content')
 @include('partials.nav')
 
-<div class="container-fluid" style="margin-top: 50px;">
+<div class="container-fluid" style="margin-top: 100px;">
 
         <div class="row">
             <div    class="col">
@@ -56,8 +56,9 @@
                         <option value="subarrendado" {{($usuario->tipo == 'subarrendado' ? 'selected' : '')}}>Subarrendado</option>
                       </select>
                 </div>
-
         </form>
+        <div class="col d-flex justify-content-center align-items-center" style="margin-top: 50px;">
+            <a href="{{ route('usuarios.index') }}" class="btn btn-primary">Volver a Usuarios</a>
+        </div>
 </div>
-
 @endsection

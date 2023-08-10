@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">CONDO U</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,7 +53,7 @@
             {{auth()->user()->nombre }}
           </span>
           <div class="nav-item">
-            <form action="{{ route('login') }}" method="POST">
+            <form action="{{ route('logout') }}" method="POST">
              @csrf
              <a class="nav-link" href="#" onclick="this.closest('form').submit()">Logout</a>
             </form>
