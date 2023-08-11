@@ -8,6 +8,7 @@ use App\Http\Controllers\ReunionController;
 use App\Http\Controllers\MensajeController;
 use App\Http\Controllers\ServicioController;
 use App\Http\Controllers\PagoController;
+use App\Http\Controllers\DepartamentoController;
 
 Route::view('/', 'welcome')->name('wilkomen');
 Route::view('login', 'login')->name('login');
@@ -36,6 +37,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('mensajes', MensajeController::class);
     Route::resource('servicios', ServicioController::class);
     Route::resource('pagos', PagoController::class);
+    Route::resource('departamentos', DepartamentoController::class);
 
     Route::get('deudores/index', function(){
 

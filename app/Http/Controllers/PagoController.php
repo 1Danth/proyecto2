@@ -85,5 +85,4 @@ public function update(Request $request, $id){
     }
     return redirect('pagos/'.$id);
 }
-
 }
