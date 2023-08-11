@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Departamento;
+use App\Models\Usuario;
+use App\Models\Usuario_Departamento;
 
 class DepartamentoController extends Controller
 {
@@ -43,4 +45,21 @@ class DepartamentoController extends Controller
         Departamento::where('id','=',$id)->update($datadepa);
         return redirect('departamentos/'.$id);
     }
+
+    public function mostrarFormularioAsociar()
+    {
+        $usudepa=Usuario_Departamento::all();
+        $usuarios = Usuario::all();
+        $departamentos = Departamento::all();
+        return view('departamentos.asociar', compact('usuarios', 'departamentos','usudepa'));
+    }
+    
+    public function guardarAsociacion(Request $request)
+    {
+        $usuario = Usuario::find($request->input('usuario_id'));
+        $usuario->departamentos()->attach($request->input('departamento_id'), ['fecha_ini' =>(new \DateTime())->format("Y-m-d") ]);
+        
+        return view('departamentos.index');
+    }
+
 }

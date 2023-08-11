@@ -32,7 +32,7 @@ return new class extends Migration
 
         });
 
-        Schema::create('usuario_departamento', function (Blueprint $table) {
+        Schema::create('Usuario_Departamento', function (Blueprint $table) {
             $table->unsignedBigInteger('id_usuario');
             $table->unsignedBigInteger('id_departamento');
             $table->date('fecha_ini');

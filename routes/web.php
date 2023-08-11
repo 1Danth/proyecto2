@@ -39,6 +39,9 @@ Route::middleware('auth')->group(function () {
     Route::resource('pagos', PagoController::class);
     Route::resource('departamentos', DepartamentoController::class);
 
+    Route::get('/asociar', [DepartamentoController::class, 'mostrarFormularioAsociar'])->name('asociar.mostrar');
+    Route::post('/asociar', [DepartamentoController::class, 'guardarAsociacion'])->name('asociar.guardar');
+
     Route::get('deudores/index', function(){
 
         $deudores=DB::select('select usuario.id, usuario.nombre, sum(monto) as total_monto from usuario join pago on usuario.id=pago.id_usuario where usuario.tipo <>\'administrador\' and pago.estado =\'no realizado\' group by usuario.id, usuario.nombre order by total_monto desc ');

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreign('id_receptor')->references('id')->on('usuario');
         });
 
-        Schema::table('usuario_departamento', function (Blueprint $table) {
+        Schema::table('Usuario_Departamento', function (Blueprint $table) {
             $table->foreign('id_usuario')->references('id')->on('usuario');
             $table->foreign('id_departamento')->references('id')->on('departamento');
         });

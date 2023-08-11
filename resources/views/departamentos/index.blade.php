@@ -3,6 +3,9 @@
 @section('titleh3',' Departamentos')
 @section('btn_create_title')
 <div class="col d-flex justify-content-center align-items-center">
+     <a href="{{ route('asociar.mostrar') }}" class="btn btn-primary">Asignar  Departamento</a>
+</div>
+<div class="col d-flex justify-content-center align-items-center" >
     <a href="{{ route('departamentos.create') }}" class="btn btn-primary">Registrar Departamento</a>
 </div>
 @endsection
