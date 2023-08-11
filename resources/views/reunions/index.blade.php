@@ -26,11 +26,13 @@
             <td>{{ $reunion->created_at }}</td>
             <td>{{ $reunion->id_usuario }}</td>
             <td>
-                <div class="row">
+                @if (auth()->user()->tipo==='administrador')
+                    <div class="row">
                     <div class="col"> 
-                        <a href="#" class="btn btn-info m-2">Actu. Conclusion</a>
+                        <a href="{{ route('reunions.edit',['reunion'=>$reunion->id]) }}" class="btn btn-info m-2">Actu. Conclusion</a>
                     </div>
                 </div>
+                @endif
             </td>
         </tr>
         @empty
